@@ -84,14 +84,18 @@ WSGI_APPLICATION = 'pruebas_api.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'davidpulloquinga',
-        'USER': 'davidpulloquinga',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'OPTIONS': {
+            'options': '-c search_path=public,servicio_seguridad,servicio_hoteles,servicio_barcos'
+        },
+        'NAME': 'mtDb',
+        'USER': 'mtUser',
+        'PASSWORD': 'g3h0p@ssw0rd',
+        'HOST': '192.168.101.234',
         'PORT': '5432',
-    }
+    },
 }
 
 
